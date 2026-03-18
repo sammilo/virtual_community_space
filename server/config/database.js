@@ -1,0 +1,18 @@
+import pg from 'pg'
+import dotenv from 'dotenv'
+import { fileURLToPath } from 'url'
+import path from 'path'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+dotenv.config({ path: path.resolve(__dirname, '../.env') })
+
+const config = {
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    host: process.env.PGHOST,
+    port: process.env.PGPORT,
+    database: process.env.PGDATABASE,
+    ssl: process.env.PGHOST === 'localhost' || process.env.PGHOST === '127.0.0.1' ? false : { rejectUnauthorized: false }
+}
+
+export const pool = new pg.Pool(config)
