@@ -13,7 +13,7 @@ const Events = () => {
                 setEvents(eventsData)
             }
             catch (error) {
-                throw error
+                console.error('Failed to load events:', error)
             }
         })()
     }, [])

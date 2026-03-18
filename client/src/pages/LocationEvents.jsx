@@ -16,11 +16,11 @@ const LocationEvents = ({ index }) => {
                 setLocation(locationData)
 
                 const allEvents = await EventsAPI.getAllEvents()
-                const locationEvents = allEvents.filter(event => event.location_id === locationData.id)
+                const locationEvents = allEvents.filter(event => event.location_id == locationData.id)
                 setEvents(locationEvents)
             }
             catch (error) {
-                throw error
+                console.error('Failed to load location events:', error)
             }
         })()
     }, [index])
