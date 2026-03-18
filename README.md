@@ -1,4 +1,4 @@
-# WEB103 Project 3 - *Virtual COmmunity Space*
+# WEB103 Project 3 - *Virtual Community Space*
 
 Submitted by: **Samantha Milo**
 
